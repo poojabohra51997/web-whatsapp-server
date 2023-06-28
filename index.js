@@ -32,6 +32,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 require("express-ws")(app);
 
+app.set('trust proxy', true)
+
 app.use(function (req, res, next) {
   console.log("middleware");
   req.testing = "testing";
